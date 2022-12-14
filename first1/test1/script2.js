@@ -6,7 +6,7 @@ import { sleep } from 'k6';
 // k6 run --vus 10 --duration 30s script.js 
 // docker run --rm -i grafana/k6 run - <script.js
 export const options = {
-    vus: 10,
+    vus: 50,
     duration: '30s',
 };
 export default function() {
