@@ -5,6 +5,10 @@ const ENDPOINT1 = "http://localhost:8080/market/cached";
 const ENDPOINT2 = "http://localhost:8080/shop";
 const ENDPOINT3 = "http://localhost:8080/mocked-response";
 const ENDPOINT4 = "http://localhost:8080/sequential";
+// Rodar o teste por 10 minutos
+const durationtest = "10m"
+// Alocar 5 VUs para esse cenário
+let VUs = 50
 
 // Definir as opções do teste
 export const options = {
@@ -14,8 +18,8 @@ export const options = {
       executor: "constant-arrival-rate", // Usar o executor constant-arrival-rate
       rate: 10, // Gerar 10 iterações por minuto
       timeUnit: "1m", // Especificar o tempo em minutos
-      duration: "10m", // Rodar o teste por 10 minutos
-      preAllocatedVUs: 5, // Alocar 5 VUs para esse cenário
+      duration: (durationtest), // Rodar o teste por 10 minutos
+      preAllocatedVUs: (VUs), // Alocar 5 VUs para esse cenário
       exec: "endpoint1", // Nome da função que será executada
     },
     // Cenário para o segundo endpoint
@@ -23,8 +27,8 @@ export const options = {
       executor: "constant-arrival-rate",
       rate: 10,
       timeUnit: "1m",
-      duration: "10m",
-      preAllocatedVUs: 5,
+      duration: (durationtest),
+      preAllocatedVUs: (VUs),
       exec: "endpoint2",
     },
     // Cenário para o terceiro endpoint
@@ -32,8 +36,8 @@ export const options = {
       executor: "constant-arrival-rate",
       rate: 10,
       timeUnit: "1m",
-      duration: "10m",
-      preAllocatedVUs: 5,
+      duration: (durationtest),
+      preAllocatedVUs: (VUs),
       exec: "endpoint3",
     },
     // Cenário para o quarto endpoint
@@ -41,8 +45,8 @@ export const options = {
       executor: "constant-arrival-rate",
       rate: 10,
       timeUnit: "1m",
-      duration: "10m",
-      preAllocatedVUs: 5,
+      duration: (durationtest),
+      preAllocatedVUs: (VUs),
       exec: "endpoint4",
     },
   },
