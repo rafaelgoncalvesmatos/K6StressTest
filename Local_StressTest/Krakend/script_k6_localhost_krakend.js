@@ -5,10 +5,15 @@ const ENDPOINT1 = "http://localhost:8080/market/cached";
 const ENDPOINT2 = "http://localhost:8080/shop";
 const ENDPOINT3 = "http://localhost:8080/mocked-response";
 const ENDPOINT4 = "http://localhost:8080/sequential";
+const ENDPOINT5 = "http://localhost:8080/market/simple";
+const ENDPOINT6 = "http://localhost:8080/cryptos/btc";
+const ENDPOINT7 = "http://localhost:8080/market/concurrent";
+const ENDPOINT8 = "http://localhost:8080/public";
+
 // Rodar o teste por 10 minutos
 const durationtest = "10m"
 // Alocar 5 VUs para esse cenário
-let VUs = 50
+let VUs = 50000
 
 // Definir as opções do teste
 export const options = {
@@ -73,3 +78,22 @@ export function endpoint4() {
   http.get(ENDPOINT4);
 }
 
+export function endpoint5() {
+  // Fazer uma requisição GET para o quarto endpoint
+  http.get(ENDPOINT5);
+}
+
+export function endpoint6() {
+  // Fazer uma requisição GET para o quarto endpoint
+  http.get(ENDPOINT6);
+}
+
+export function endpoint7() {
+  // Fazer uma requisição GET para o quarto endpoint
+  http.get(ENDPOINT7);
+}
+
+export function endpoint8() {
+  // Fazer uma requisição GET para o quarto endpoint
+  http.get(ENDPOINT8);
+}
